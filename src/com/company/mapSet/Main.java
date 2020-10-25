@@ -36,7 +36,10 @@ public class Main {
         }
 
         System.out.println("<---------------------| HASH : |------------------------->");
-        System.out.println(mapNames);
+
+        for (Map.Entry<String, Integer> nameAndQuantity: mapNames.entrySet() ) {
+            System.out.println(nameAndQuantity.getKey()+ " -> "+ nameAndQuantity.getValue());
+        }
 
         System.out.println("<---------------------| SET : |-------------------------->");
         for (String name : setNames) {
