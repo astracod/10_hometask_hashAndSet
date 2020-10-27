@@ -23,10 +23,10 @@ public class Main {
                 }
             }
             for (int j = 0; j < names.size(); j++) {
-                if (targetNames.equals(names.get(j)) && quantity > 1) {
-                    mapNames.put(targetNames, quantity);
-                } else if (targetNames.equals(names.get(j)) && quantity == 1) {
+                mapNames.put(targetNames, quantity);
+                if (mapNames.containsValue(1)) {
                     setNames.add(targetNames);
+                    mapNames.remove(targetNames);
                 }
             }
         }
@@ -37,8 +37,8 @@ public class Main {
 
         System.out.println("<---------------------| HASH : |------------------------->");
 
-        for (Map.Entry<String, Integer> nameAndQuantity: mapNames.entrySet() ) {
-            System.out.println(nameAndQuantity.getKey()+ " -> "+ nameAndQuantity.getValue());
+        for (Map.Entry<String, Integer> nameAndQuantity : mapNames.entrySet()) {
+            System.out.println(nameAndQuantity.getKey() + " -> " + nameAndQuantity.getValue());
         }
 
         System.out.println("<---------------------| SET : |-------------------------->");
